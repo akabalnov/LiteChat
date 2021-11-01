@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Chat app</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <script>
+        var socket = io.connect("http://80.78.253.72");
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src='script.js'></script>
+    
+
+</head>
+
+<body>
+    <!-- <h2>Chat app</h2>
+    <br>
+    <button onclick="ping()">Проверить связь с сервером</button>&nbsp;<span id="serverConnectTest"></span>
+    <br>
+    <br>
+    <div style="margin: 5px">
+        <div>Регистрация:</div>
+        <span>Введите логин: </span><input id="loginInput">
+        <span>Введите пароль: </span><input id="passwordInput">
+        <button onclick="registerNewUser()">Регистрация</button>&nbsp;<span id=registerStatus></span>
+    </div>
+    <br><br>
+    <div style="margin: 5px">
+        <div>Вход:</div>
+        <span>Введите логин: </span><input id="loginInput1">
+        <span>Введите пароль: </span><input id="passwordInput1">
+        <button onclick="loginUser()">Вход</button>&nbsp;<span id=loginStatus></span>&nbsp;<span id=loginToken></span>
+    </div> -->
+    <div class="login-page">
+        <h2 style="text-align: center">Добро пожаловать в LiteChat</h2>
+        <div class="form">
+            <form onsubmit="return false;" class="register-form">
+                <input type="text" placeholder="логин" id="loginInput"/>
+                <input type="password" placeholder="пароль" id="passwordInput"/>
+                <button onclick="registerNewUser()">Создать аккаунт</button>
+                <p class="message">Уже зарегистрированы? <a href="#">Авторизация</a></p>
+            </form>
+            <form onsubmit="return false;" class="login-form">
+                <input type="text" placeholder="логин" id="loginInput1"/>
+                <input type="password" placeholder="пароль" id="passwordInput1"/>
+                <button onclick="loginUser()">Войти</button>
+                <p class="message">Еще не зарегистрированы? <a href="#">Создать аккаунт</a></p>
+            </form>
+            <br>
+            <span id=loginStatus></span>
+        </div>
+    </div>
+    <script>
+        $('.message a').click(function () {
+            $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
+        });
+    </script>
+</body>
+
+</html>
